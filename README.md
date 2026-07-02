@@ -90,7 +90,7 @@ React 19 · TanStack Start & Router · Vite 7 · Tailwind CSS 4 · shadcn/ui · 
 
 ## A note on rendering
 
-BeamerLab renders a curated subset of Beamer for fast, faithful previews — it is not a full TeX engine. For final camera-ready output, export your `.tex` file and compile it with your favorite LaTeX distribution. Your source stays 100% standard Beamer either way.
+BeamerLab renders a curated subset of Beamer for fast, faithful previews — it is not a full TeX engine. For final camera-ready output, export your `.tex` file and compile it with your favorite LaTeX distribution or hit the PDF export button! Your source stays 100% standard Beamer either way.
 
 ## Support BeamerLab
 
