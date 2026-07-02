@@ -1,0 +1,341 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-editor-bg: var(--editor-bg);
+  --color-editor-gutter: var(--editor-gutter);
+  --color-editor-line: var(--editor-line);
+  --color-slide-bg: var(--slide-bg);
+  --color-toolbar-bg: var(--toolbar-bg);
+  --color-toolbar-border: var(--toolbar-border);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-template-hover: var(--template-hover);
+  --font-mono: var(--font-mono-stack);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.16 0.014 260);
+  --foreground: oklch(0.93 0.01 260);
+  --card: oklch(0.2 0.014 260);
+  --card-foreground: oklch(0.93 0.01 260);
+  --popover: oklch(0.22 0.014 260);
+  --popover-foreground: oklch(0.93 0.01 260);
+  --primary: oklch(0.65 0.2 145);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.25 0.014 260);
+  --secondary-foreground: oklch(0.8 0.01 260);
+  --muted: oklch(0.22 0.01 260);
+  --muted-foreground: oklch(0.6 0.02 260);
+  --accent: oklch(0.55 0.18 250);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.28 0.01 260);
+  --input: oklch(0.25 0.01 260);
+  --ring: oklch(0.65 0.2 145);
+
+  --editor-bg: oklch(0.14 0.012 260);
+  --editor-gutter: oklch(0.18 0.012 260);
+  --editor-line: oklch(0.2 0.012 260);
+  --slide-bg: oklch(0.98 0 0);
+  --toolbar-bg: oklch(0.13 0.014 260);
+  --toolbar-border: oklch(0.25 0.01 260);
+  --sidebar-bg: oklch(0.15 0.012 260);
+  --template-hover: oklch(0.22 0.015 260);
+  --font-mono-stack: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+#lovable-badge,
+[id*="lovable-badge"],
+[data-lovable-badge] {
+  display: none !important;
+}
+
+/* CodeMirror overrides */
+.cm-editor {
+  height: 100% !important;
+  font-family: 'JetBrains Mono', var(--font-mono-stack) !important;
+  font-size: 14px !important;
+  background: var(--editor-bg) !important;
+}
+.cm-editor .cm-gutters {
+  background: var(--editor-gutter) !important;
+  border-right: 1px solid var(--border) !important;
+}
+.cm-editor .cm-activeLine {
+  background: var(--editor-line) !important;
+}
+.cm-editor .cm-selectionBackground {
+  background: oklch(0.65 0.2 145 / 20%) !important;
+}
+.cm-editor .cm-preview-edit-highlight {
+  background: oklch(0.65 0.2 145 / 30%);
+  outline: 1px solid oklch(0.65 0.2 145 / 55%);
+  border-radius: 2px;
+}
+.cm-editor .cm-ai-change-highlight {
+  background: oklch(0.86 0.18 85 / 30%);
+  outline: 1px solid oklch(0.86 0.18 85 / 58%);
+  border-radius: 2px;
+}
+.cm-editor .cm-cursor {
+  border-left-color: var(--primary) !important;
+}
+
+/* BeamerBud launcher */
+.beamerbud-launcher {
+  box-shadow:
+    0 18px 48px -24px oklch(0 0 0 / 80%),
+    0 0 0 1px oklch(0.65 0.2 145 / 8%) inset;
+}
+.beamerbud-icon {
+  animation: beamerbud-hover 3.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.beamerbud-icon .beamerbud-tail {
+  animation: beamerbud-tail 1.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 100% 50%;
+}
+.beamerbud-icon .beamerbud-visor {
+  animation: beamerbud-visor 2.4s ease-in-out infinite;
+}
+.beamerbud-icon .beamerbud-signal {
+  animation: beamerbud-signal 2.2s ease-in-out infinite;
+}
+.beamerbud-flight {
+  position: fixed;
+  z-index: 80;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+  animation: beamerbud-fly var(--beamerbud-flight-duration, 260ms)
+    cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes beamerbud-hover {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(-1.5deg);
+  }
+}
+
+@keyframes beamerbud-tail {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes beamerbud-visor {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes beamerbud-signal {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes beamerbud-fly {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(var(--beamerbud-flight-x), var(--beamerbud-flight-y), 0)
+      scale(var(--beamerbud-flight-scale))
+      rotate(0deg);
+  }
+}
+
+/* Slide rendering */
+.slide-frame {
+  font-family: 'Computer Modern', 'Latin Modern', 'CMU Serif', Georgia, serif;
+}
+.slide-frame h1, .slide-frame h2, .slide-frame h3 {
+  font-family: 'Computer Modern Sans', 'Latin Modern Sans', 'CMU Sans Serif', 'Helvetica Neue', sans-serif;
+}
+.slide-frame [data-target-id],
+.slide-frame .beamerlab-editable-text {
+  cursor: text;
+}
+.slide-frame .beamerlab-editable-text:hover {
+  outline: 1px solid color-mix(in srgb, var(--primary) 55%, transparent);
+  outline-offset: 2px;
+}
+.slide-frame [contenteditable="true"]:focus {
+  outline: 1px solid color-mix(in srgb, var(--primary) 70%, transparent);
+  outline-offset: 2px;
+}
+.slide-frame .beamerlab-image {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  margin: 8px auto;
+}
+.slide-frame .beamerlab-image-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+.slide-frame .beamerlab-image-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+.slide-frame .beamerlab-image-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 8px 0;
+}
+.slide-frame .beamerlab-image-row .beamerlab-image {
+  flex: 0 1 auto;
+  max-width: calc(50% - 8px);
+  max-height: 220px;
+  margin: 0;
+}
+
+/* KaTeX sizing in slides */
+.slide-frame .katex { font-size: 1em; }
+.slide-frame .katex-display { margin: 0.6em 0; }
+
+/* Intro modal */
+.beamerlab-typewriter {
+  width: 17ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+  animation:
+    beamerlab-type 1.9s steps(17, end),
+    beamerlab-caret 0.9s step-end infinite;
+}
+
+@keyframes beamerlab-type {
+  from { width: 0; }
+  to { width: 17ch; }
+}
+
+@keyframes beamerlab-caret {
+  50% { border-color: transparent; }
+}
+
+/* Preview PDF export */
+.print-deck {
+  display: none;
+}
+
+@page {
+  size: 10in 5.625in;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 10in;
+    height: 5.625in;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .app-shell,
+  [data-print-hidden="true"],
+  [data-beamerlab-modal="true"] {
+    display: none !important;
+  }
+
+  .print-deck {
+    display: block !important;
+    width: 10in;
+    background: white;
+  }
+
+  .print-slide-page {
+    width: 960px;
+    height: 540px;
+    margin: 0;
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+    background: white;
+  }
+
+  .print-slide-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .print-slide-page .slide-frame {
+    box-shadow: none !important;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--editor-bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
