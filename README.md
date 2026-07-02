@@ -1,4 +1,4 @@
-# BeamerLab
+# <B> BeamerLab
 
 **Write LaTeX Beamer slides in your browser and watch them render live — no TeX toolchain required.**
 
