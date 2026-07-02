@@ -82,12 +82,6 @@ function AboutPage() {
             it. Stars also make the project easier to share with other students, researchers, and
             contributors who might want to improve it.
           </p>
-          <p className="mt-3 text-xs leading-5 text-muted-foreground/80">
-            The repository is being prepared for an open-source release and will be made public after
-            a little more testing and cleanup. 
-            <br />
-            In the meantime, you can share your ideas and feedback via email.
-          </p>
 
           <a
             href="https://github.com/ycakan/beamerlab"
