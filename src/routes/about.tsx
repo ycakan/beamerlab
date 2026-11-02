@@ -13,7 +13,7 @@ export const Route = createFileRoute('/about')({
       { title: 'About BeamerLab' },
       {
         name: 'description',
-        content: 'About BeamerLab, a modern LaTeX Beamer editor built by ETH Zurich students.',
+        content: 'About BeamerLab, a modern LaTeX Beamer editor built by students.',
       },
     ],
   }),
@@ -44,7 +44,7 @@ function AboutPage() {
 
         <div className="mt-8 space-y-5 text-sm leading-7 text-muted-foreground">
           <p>
-            We are a group of ETH Zurich students who have spent enough late nights fighting with
+            We are a group of students who have spent enough late nights fighting with
             math equations in slides, broken figures, and mysterious spacing issues. So we decided
             to build BeamerLab: a way to modernize the LaTeX presentation experience and make it
             more accessible to everyone who needs it.
